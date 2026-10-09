@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Bolognese",
+    "description": "A classic Italian dish.",
+    "duration": 45,
+    "servings": 4,
+    "imagePath": "/images/spaghetti-bolognese.jpg",
+    "instructions": "First cook the spaghetti. Meanwhile brown the minced meat and stir in the tomato sauce. Serve with the cooked spaghetti.",
+    "ingredients": [
+      {
+        "id": 1,
+        "recipeId": 1,
+        "name": "Spaghetti",
+        "amount": 200,
+        "unit": "g"
+      },
+      {
+        "id": 2,
+        "recipeId": 1,
+        "name": "Minced meat",
+        "amount": 300,
+        "unit": "g"
+      },
+      {
+        "id": 3,
+        "recipeId": 1,
+        "name": "Tomato sauce",
+        "amount": 400,
+        "unit": "ml"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Pancakes",
+    "description": "Soft and fluffy pancakes.",
+    "duration": 20,
+    "servings": 4,
+    "imagePath": "/images/pancakes.jpg",
+    "instructions": "Whisk all ingredients into a smooth batter, then fry it in a pan one portion at a time.",
+    "ingredients": [
+      {
+        "id": 4,
+        "recipeId": 2,
+        "name": "Flour",
+        "amount": 200,
+        "unit": "g"
+      },
+      {
+        "id": 5,
+        "recipeId": 2,
+        "name": "Milk",
+        "amount": 300,
+        "unit": "ml"
+      },
+      {
+        "id": 6,
+        "recipeId": 2,
+        "name": "Eggs",
+        "amount": 2,
+        "unit": null
+      },
+      {
+        "id": 7,
+        "recipeId": 2,
+        "name": "Sugar",
+        "amount": 2,
+        "unit": "tbsp"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Caesar Salad",
+    "description": "A fresh, crisp salad with Caesar dressing.",
+    "duration": 15,
+    "servings": 2,
+    "imagePath": "/images/caesar-salad.jpg",
+    "instructions": "Wash the lettuce, prepare the dressing and arrange everything with croutons and parmesan.",
+    "ingredients": [
+      {
+        "id": 8,
+        "recipeId": 3,
+        "name": "Romaine lettuce",
+        "amount": 1,
+        "unit": "head"
+      },
+      {
+        "id": 9,
+        "recipeId": 3,
+        "name": "Croutons",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "id": 10,
+        "recipeId": 3,
+        "name": "Parmesan",
+        "amount": 50,
+        "unit": "g"
+      },
+      {
+        "id": 11,
+        "recipeId": 3,
+        "name": "Caesar dressing",
+        "amount": 150,
+        "unit": "ml"
+      }
+    ]
+  }
+]
