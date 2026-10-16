@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 export default function Home() {
   return (
     <section className="my-auto flex flex-col items-center gap-8 rounded-2xl bgemerald-50 px-6 py-20 text-center dark:bg-gray-800">
