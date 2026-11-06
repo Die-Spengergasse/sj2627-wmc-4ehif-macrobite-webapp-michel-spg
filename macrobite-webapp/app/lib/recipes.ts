@@ -1,15 +1,35 @@
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import type { Recipe } from "../types/recipe";
 
-const file = path.join(process.cwd(), "data", "recipes.json");
+const API_URL = process.env.API_URL ?? "http://localhost:3000";
 
-export async function getRecipes(): Promise<Recipe[]> {
-  return JSON.parse(await readFile(file, "utf-8")) as Recipe[];
+function withImageUrl(recipe: Recipe): Recipe {
+  return recipe.imagePath
+    ? { ...recipe, imagePath: `${API_URL}${recipe.imagePath}` }
+    : recipe;
 }
 
-// http://localhost:3001/recipe/5
+export async function getRecipes(): Promise<Recipe[]> {
+  const res = await fetch(`${API_URL}/recipes`, { cache: "no-store" });
+
+  if (!res.ok) {
+    throw new Error(`Failed to load recipes (HTTP ${res.status})`);
+  }
+
+  const recipes = (await res.json()) as Recipe[];
+  return recipes.map(withImageUrl);
+}
+
 export async function getRecipe(id: string): Promise<Recipe | null> {
-  const recipes = await getRecipes();
-  return recipes.find((r) => r.id === Number(id)) ?? null;
+  const res = await fetch(`${API_URL}/recipes/${encodeURIComponent(id)}`, {
+    cache: "no-store",
+  });
+
+  if (res.status === 404) {
+    return null;
+  }
+
+  if (!res.ok) {
+    throw new Error(`Failed to load recipe ${id} (HTTP ${res.status})`);
+  }
+  return withImageUrl((await res.json()) as Recipe);
 }
